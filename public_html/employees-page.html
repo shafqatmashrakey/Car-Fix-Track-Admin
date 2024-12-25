@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Shop Management System</title>
+    <link rel="stylesheet" type="text/css" href="css/appts.css">
+
+    <!-- <style src = "css/appts.css">
+    </style> -->
+</head>
+<div class="page-title">Employees</div>
+<button class="add-button"  id="addEmployee">Add New Employee</button>
+<div class="search-bar">
+    <input type="text" id="searchEmployee" placeholder="Search by Employee Name">
+</div>
+
+<table id="employeeTable">
+    <thead>
+        <tr>
+            <th>Employee Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Work Phone</th>
+            <th>Personal Phone</th>
+            <th>Total Appointments</th>
+            <th>Edit Employee Info</th>
+            <th>Edit Employee Services</th>
+            <th>View Employee Services</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Customer data will be populated here -->
+    </tbody>
+</table>
+
+
+<div id="modal" class="modal">
+    
+    <div class="modal-content">
+        <div class="close" onclick="closeModal('modal')">&times;</div>
+
+        <br> <br>
+        <div id='modalInfo'>
+        New Employee Info <br><br>
+        <input type="text" id="fname" name="fname" placeholder="First Name"><br><br>
+        <input type="text" id="lname" name="lname" placeholder="Last Name"><br><br>
+        <input type="email" id="email" name='email' placeholder="Employee Email"> <br><br>
+        <input type="number" id="workPhoneNum" name="workPhoneNum" placeholder="Employee Work Phone Number"><br><br>
+        <input type="number" id="personalPhoneNum" name="personalPhoneNum" placeholder="Employee Personal Phone Number"><br><br>
+
+
+        <input id="addNewEmployee" type="button" value="Add New Employee">
+
+
+        </div>
+    </div>
+</div>
+
+
+<div id="editmodal" class="modal">
+    
+    <div class="modal-content">
+        <div class="close" onclick="closeModal('editmodal')">&times;</div>
+
+        <br> <br>
+        <div id='modalInfo'>
+        Edit Employee Info <br><br>
+        <input type="text" id="editFName" name="editFName" placeholder="First Name"><br><br>
+        <input type="text" id="editLName" name="editLName" placeholder="Last Name"><br><br>
+        <input type="email" id="editEmail" name='editEmail' placeholder="Employee Email"> <br><br>
+        <input type="number" id="editWorkPhoneNum" name="editWorkPhoneNum" placeholder="Employee Work Phone Number"><br><br>
+        <input type="number" id="editPersonalPhoneNum" name="editPersonalPhoneNum" placeholder="Employee Personal Phone Number"><br><br>
+
+        <input id="editemployee" type="button" value="Edit Employee">
+
+
+        </div>
+    </div>
+</div>
+
+
+<div id="editservices" class="modal">
+    
+    <div class="modal-content">
+        <div class="close" onclick="closeModal('editservices')">&times;</div>
+
+        <br> <br>
+        <div id='modalInfo'>
+        Edit Employee Services Info <br><br>
+        <div id="servicesList"></div>
+        <input id='updateServices'type="button" value="Edit Services for Employee">
+
+
+        </div>
+    </div>
+</div>
+
+
+<div id="viewservices" class="modal">
+    
+    <div class="modal-content">
+        <div class="close" onclick="closeModal('viewservices')">&times;</div>
+
+        <br> <br>
+        <div id='modalInfo'>
+            <div id="viewheader">Service Offered By Employee</div> <br><br>
+            <div id="offeredservices">List of services offered</div>
+
+
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

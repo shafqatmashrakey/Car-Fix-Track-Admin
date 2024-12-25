@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Shop Management System</title>
+    <link rel="stylesheet" type="text/css" href="css/appts.css">
+
+    <!-- <style src = "css/appts.css">
+    </style> -->
+</head>
+<div class="page-title">Payments</div>
+<button class="add-button"  id="addPayment">Add New Payment</button>
+<table id='paymentTable'>
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Appointment Date</th>
+            <th>Total Charge</th>
+            <th>Total Paid</th>
+            <th>Due Payment</th>
+            <th>Fully Paid</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Service data will be populated here -->
+    </tbody>
+</table>
+<div id="modal" class="modal">
+    
+    <div class="modal-content">
+        <div class="close" onclick="closeModal('modal')">&times;</div>
+
+        <br> <br>
+        <div id='modalInfo'>
+        <h1>New Payment Info </h1>
+        <br><br>
+        
+        <select id="appts" name="appts">
+            <option value="" disabled selected>Select Appointment</option>
+
+         </select>  <br> <br>
+
+
+         <div id="paymentInfo" style="display: none;">
+            <span id="addCost">Items Additional Cost:  </span> <br> <br>
+            Customer<br>
+            <select id="customers" name="customers">
+                <option value="" disabled selected>Select Customer</option>
+
+            </select>  <br> <br>
+
+            Due Payment<br>
+            <input type="date" id="paymentDue" name="paymentDue" placeholder="Due Payment Date"><br><br>
+            
+            Base Charge <br>
+            <input type="number" id="charge" name="charge" placeholder="Base Charge"><br><br>
+
+
+            Paid Amount <br>
+            <input type="number" id="paid" name="paid" placeholder="Paid Amount"><br><br>
+
+
+            <input id='addNewPayment' type="button" value="Add Payment">
+
+         </div>
+        
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<div id="editmodal" class="modal">
+    
+    
+    <div class="modal-content">
+        <div class="close" onclick="closeModal('editmodal')">&times;</div>
+        
+        
+        <div id='editModalInfo'>
+            <h1>Edit Payment Info </h1>
+
+            Due Payment<br>
+            <input type="date" id="editPaymentDue" name="editPaymentDue" placeholder="Edit Due Payment Date"><br><br>
+            
+            Total Charge <br>
+            <input type="number" id="editTotalCharge" name="editTotalCharge" placeholder="Edit Total Charge"><br><br>
+
+
+            Paid Amount <br>
+            <input type="number" id="editPaid" name="editPaid" placeholder="Paid Amount"><br><br>
+            <input id='editPayment' type="button" value="Edit Payment">
+
+        </div>
+
+    </div>
+</div>
+
+

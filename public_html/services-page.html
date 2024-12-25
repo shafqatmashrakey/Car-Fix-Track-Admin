@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Shop Management System</title>
+    <link rel="stylesheet" type="text/css" href="css/appts.css">
+
+    <!-- <style src = "css/appts.css">
+    </style> -->
+</head>
+<div class="page-title">Services</div>
+<button class="add-button"  id="addService">Add New Service</button>
+<table id = 'serviceTable'>
+    <thead>
+        <tr>
+            <th>Service Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Service data will be populated here -->
+    </tbody>
+</table>
+<div id="modal" class="modal">
+    
+    <div class="modal-content">
+        <div class="close" onclick="closeModal('modal')">&times;</div>
+
+        <br> <br>
+        <div id='modalInfo'>
+        New Service Info <br><br>
+        <input type="text" id="serviceName" name="serviceName" placeholder="Service Name"><br><br>
+        <input type="text" id="serviceDescription" name="serviceDescription" placeholder="Service Description"><br><br>
+
+        <input id="addNewService" type="button" value="Add New Service">
+
+
+        </div>
+    </div>
+</div>
+
+
+<div id="editmodal" class="modal">
+    
+    
+    <div class="modal-content">
+        <div class="close" onclick="closeModal('editmodal')">&times;</div>
+        
+        
+        <div id='editModalInfo'>
+            Edit Service Info <br><br>
+            <input type="text" id="editServiceName" name="editServiceName" placeholder="Service"><br><br>
+            <input type="text" id="editServiceDescription" name="editServiceDescription" placeholder="Service Description"><br><br>
+
+            <input id ='editservice' type="submit" value="Submit"><br> <br>
+            <input id ='deleteservice' type="button" value="Delete Service">
+
+        </div>
+
+    </div>
+</div>
+
+

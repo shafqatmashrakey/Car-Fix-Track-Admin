@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Shop Management System</title>
+    <link rel="stylesheet" type="text/css" href="css/appts.css">
+
+    <!-- <style src = "css/appts.css">
+    </style> -->
+</head>
+<div class="page-title">Customers</div>
+<button class="add-button" id="addCustomer">Add New Customer</button> <br>
+<div class="search-bar">
+    <input type="text" id="searchCustomer" placeholder="Search by Customer Name">
+</div>
+
+<table id="customerTable">
+    <thead>
+        <tr>
+            <th>Customer Id</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <!-- <th>Vehicles</th> -->
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Customer data will be populated here -->
+    </tbody>
+</table>
+
+<div id="modal" class="modal">
+    
+    <div class="modal-content">
+        <div class="close" onclick="closeModal('modal')">&times;</div>
+
+        <br> <br>
+        <div id='modalInfo'>
+        New Customer Info <br><br>
+            <input type="text" id="fname" name="fname" placeholder="First Name"><br><br>
+            <input type="text" id="lname" name="lname" placeholder="Last Name"><br><br>
+            <input type="number" id="phoneNum" name="phoneNum" placeholder="Customer Phone Number"><br><br>
+            <input type="email" id="email" name='email' placeholder="Customer Email"> <br><br>
+            <input type="text" id="address" name='address' placeholder="Customer Address"> <br><br>
+
+            <input id='addNewCustomer' type="button" value="Submit">
+        </div>
+
+    </div>
+</div>
+
+<div id="editmodal" class="modal">
+    
+    
+    <div class="modal-content">
+        <div class="close" onclick="closeModal('editmodal')">&times;</div>
+        
+        
+        <div id='editModalInfo'>
+            Edit Customer Info <br><br>
+            <input type="text" id="editFName" name="editFName" placeholder="First Name"><br><br>
+            <input type="text" id="editLName" name="editLName" placeholder="Last Name"><br><br>
+            <input type="number" id="editPhoneNum" name="editPhoneNum" placeholder="Customer Phone Number"><br><br>
+            <input type="email" id="editEmail" name='editEmail' placeholder="Customer Email"> <br><br>
+            <input type="text" id="editAddress" name='editAddress' placeholder="Customer Address"> <br><br>
+
+            <input id="editCustomer" type="button" value="Edit Customer"><br> <br>
+            <input id="deleteCustomer" type="button" value="Delete Customer">
+
+        </div>
+
+    </div>
+</div>
+
+
+<script src="js/customersTrial.js"> </script> 
+
+

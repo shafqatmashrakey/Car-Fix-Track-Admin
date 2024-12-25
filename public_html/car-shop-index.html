@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Shop Management System</title>
+    <link rel="stylesheet" type="text/css" href="css/appts.css">
+</head>
+<body>
+
+    <div class="header">
+        <div class="title">Car Shop Management System</div>
+        <div class="dropdown">
+            <button class="dropbtn">Menu ▼</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="loadPage('customers')">Customers</a>
+                <a href="#" onclick="loadPage('vehicles')">Vehicles</a>
+                <a href="#" onclick="loadPage('employees')">Employees</a>
+                <a href="#" onclick="loadPage('appointments')">Appointments</a>
+                <a href="#" onclick="loadPage('services')">Services</a>
+                <a href="#" onclick="loadPage('payments')">Payments</a>
+                <a href="#" onclick="loadPage('items')">Items</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Section (Dynamically Loaded) -->
+    <div class="content" id="content-container">
+        <!-- The content will be injected here by JavaScript -->
+    </div>
+
+    <script>
+        // Define a mapping of page names to their corresponding HTML content
+        const pages = {
+            customers: '/customers-page.html',
+            vehicles: '/vehicles-page.html',
+            employees: '/employees-page.html',
+            appointments: '/appointments-page.html',
+            services: '/services-page.html',
+            payments: '/payments-page.html',
+            items: '/items-page.html'
+        };
+
+        const addButtons = {
+            customers: 'addCustomer',
+            vehicles: 'addVehicle',
+            employees: 'addEmployee',
+            appointments: 'addAppointment',
+            services: 'addService',
+            payments: 'addPayment',
+            items: 'addItem'
+        };
+
+        // Function to load the appropriate page content
+        function loadPage(page) {
+            const contentContainer = document.getElementById('content-container');
+
+            // Remove all existing classes
+            contentContainer.classList.remove('landing-page', 'other-pages');
+
+            // Handle landing page specifically
+            if (!page || page === 'landing') {
+                contentContainer.classList.add('landing-page');
+                contentContainer.innerHTML = ''; // Keep it empty
+                return;
+            }
+
+            // For other pages
+            contentContainer.classList.add('other-pages');
+            const pageToLoad = pages[page] || pages.customers;
+
+            // Fetch the content and inject it into the container
+            fetch(pageToLoad)
+                .then(response => response.text())
+                .then(data => {
+                    contentContainer.innerHTML = data;
+                    injectScript(`js/${String(page)}.js`);
+                    if (addButtons[page]) {
+                        const addButton = document.getElementById(addButtons[page]);
+                        if (addButton) {
+                            addButton.onclick = function () {
+                                openModal('modal');
+                            };
+                        }
+                    }
+                })
+                .catch(error => {
+                    contentContainer.innerHTML = `<p>Error loading page content: ${error}</p>`;
+                });
+        }
+
+        function openModal(modal) {
+            document.getElementById(modal).style.display = 'block';
+        }
+
+        function closeModal(modal) {
+            document.getElementById(modal).style.display = 'none';
+        }
+
+        // Function to inject a script dynamically into the page
+        function injectScript(src) {
+            const script = document.createElement('script');
+            script.src = src;
+            script.type = 'text/javascript';
+            document.body.appendChild(script);
+        }
+
+        // Load the landing page by default on page load
+        window.onload = () => loadPage('landing');
+    </script>
+</body>
+</html>
