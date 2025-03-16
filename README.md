@@ -19,3 +19,11 @@ locate the folder Car-Fix-Track-Admin
 node server.js 
 
 Access the site through: http://localhost:3000
+
+# For Testing with Cypress
+
+npm install cypress --save-dev 
+
+# To run Cypress
+
+npx cypress open
