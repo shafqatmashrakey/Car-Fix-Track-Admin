@@ -1,16 +1,60 @@
-
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', Arial, sans-serif;
 }
 
+/* Hide the main content initially */
+.main-content {
+    display: none;
+}
 body {
     background: url('200w.gif');
     background-size: auto;
     color: #333;
     line-height: 1.6;
+}
+/* Center the login form */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('200w.gif');
+    background-size: auto;
+    color: #333;
+    line-height: 1.6;
+}
+
+.login-form {
+    background: rgba(255, 255, 255, 0.8); /* Add transparency to the form */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-form input {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #313131;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #111111;
 }
 
 /* Header Styling */
@@ -121,7 +165,8 @@ table {
     overflow: hidden;
 }
 
-th, td {
+th,
+td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
@@ -150,7 +195,7 @@ th {
 }
 
 .dropdown-menu-btn:hover {
-    background-color: #005bb5;
+    background-color: #393a3a;
 }
 
 .dropdown-menu-content {
@@ -190,9 +235,9 @@ th {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: white;
     margin: 8% auto;
     padding: 20px;
@@ -201,20 +246,22 @@ th {
     width: 80%;
     max-width: 500px;
     text-align: center;
-  }
+}
 
-  .close {
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
-  }
-  
-  .close:hover {
+}
+
+.close:hover {
     color: rgba(7, 7, 7, 0.849);
     cursor: pointer;
-  }
+}
 
-  input[type="text"],input[type="number"],input[type="email"]{
+input[type="text"],
+input[type="number"],
+input[type="email"] {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -222,22 +269,24 @@ th {
 }
 
 
-input[type="date"],input[type="time"]{
+input[type="date"],
+input[type="time"] {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 75%;
-} 
+}
 
 
 
-select{
+select {
     width: 75%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 
 }
+
 .search-bar {
     margin-bottom: 20px;
     text-align: left;
@@ -268,4 +317,3 @@ select{
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
