@@ -1,4 +1,4 @@
-# CSC540-CarFixer
+# CSC560-CarFixer
 # Setting up the Node.js environement
 Mysql2 module is the module/library that will allow you to interface Node.js and MySQL server. 
 It can be installed locally in your project directory (you can also install it globally on your 
